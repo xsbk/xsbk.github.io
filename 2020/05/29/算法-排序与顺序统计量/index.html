@@ -5,15 +5,17 @@
   
 
   
-  <title>深陷迷途的猫</title>
+  <title>算法--排序与顺序统计量 | 深陷迷途的猫</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="深陷迷途的猫">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="六、堆排序集合了归并和插入排序的优点二叉堆是数组，可以被看成一个近似的完全二叉树最大堆    最大堆的性质是指出来根以外的所有结点i都要满足：A[PARENT(i)]&gt;&#x3D;A[i]，也就是说，某个结点的值至多与其父结点一样大。最小堆伪代码实现 12345678910111213141516171819202122    PARENT(i)        return Math.floor([i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法--排序与顺序统计量">
+<meta property="og:url" content="http://yoursite.com/2020/05/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F%E4%B8%8E%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/index.html">
 <meta property="og:site_name" content="深陷迷途的猫">
-<meta property="og:description" content="学习笔记">
+<meta property="og:description" content="六、堆排序集合了归并和插入排序的优点二叉堆是数组，可以被看成一个近似的完全二叉树最大堆    最大堆的性质是指出来根以外的所有结点i都要满足：A[PARENT(i)]&gt;&#x3D;A[i]，也就是说，某个结点的值至多与其父结点一样大。最小堆伪代码实现 12345678910111213141516171819202122    PARENT(i)        return Math.floor([i">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-29T03:27:38.000Z">
+<meta property="article:modified_time" content="2020-05-29T03:36:31.406Z">
 <meta property="article:author" content="sara">
 <meta name="twitter:card" content="summary">
   
@@ -64,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-算法-排序与顺序统计量" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-算法-排序与顺序统计量" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F%E4%B8%8E%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/" class="article-date">
   <time datetime="2020-05-29T03:27:38.000Z" itemprop="datePublished">2020-05-29</time>
@@ -79,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F%E4%B8%8E%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/">算法--排序与顺序统计量</a>
+    <h1 class="article-title" itemprop="name">
+      算法--排序与顺序统计量
     </h1>
   
 
@@ -145,110 +145,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-算法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/29/%E7%AE%97%E6%B3%95/" class="article-date">
-  <time datetime="2020-05-29T02:10:12.000Z" itemprop="datePublished">2020-05-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/%E7%AE%97%E6%B3%95/">算法基础知识</a>
-    </h1>
+    <a href="/2020/05/29/%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">算法基础知识</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="算法基础"><a href="#算法基础" class="headerlink" title="算法基础"></a>算法基础</h2><h3 id="1、插入排序"><a href="#1、插入排序" class="headerlink" title="1、插入排序"></a>1、插入排序</h3><p>代码实现：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i=1;i&lt;arr.length;i++)&#123;</span><br><span class="line">    var j=i-1;</span><br><span class="line">    var tmp = arr[i];</span><br><span class="line">    <span class="keyword">while</span>(j&gt;=0&amp;&amp;arr[j]&gt;tmp)&#123;</span><br><span class="line">        arr[j+1] = arr[j];</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[j+1] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行时间：<br>    影响因素：<br>        输入规律<br>        输入数组大小<br>运行时间上界：<br>最糟糕情况下：<br>    T(n)定义为输入规模为n时的最长运行时间<br>    T(n) = Θ(n^2)<br>    平均情况：T(n)定义为输入规模为n时的所有可能运行时间</p>
-<h3 id="2、分析算法"><a href="#2、分析算法" class="headerlink" title="2、分析算法"></a>2、分析算法</h3><pre><code>分析算法的结果意味着预测算法需要的资源</code></pre><h3 id="3、设计算法"><a href="#3、设计算法" class="headerlink" title="3、设计算法"></a>3、设计算法</h3><p>分治法<br>    思想：将原问题分解成几个规模较小的但类似于原问题的子问题，递归地求解这些子问题，然后在合并这些子问题的解来建立原问题的解。<br>    步骤：<br>        分解原问题为若干个子问题，这些子问题都是原问题的规模较小的实例<br>        解决这些子问题，递归的求解出这些子问题<br>        合并这些子问题的解<br>分析分治算法<br>    循环不变式：<br>        三条性质：<br>            初始化：玄幻的第一次迭代之前，为真<br>            保持：如果循环某次迭代之前为真，之后也为真<br>            终止，在循环终止的时候，不变式为我们提供一个用性质，该性质有助于证明算法是正确的。<br>        可利用循环不变式证明算法的正确性<br>    伪代码中约定<br>        缩进表示块结构<br>        //注释<br>        NIL==null</p>
-<h3 id="函数的增长"><a href="#函数的增长" class="headerlink" title="函数的增长"></a>函数的增长</h3><p>是忽略掉那些依赖于计算机的常量，以及不去检查实际运行时间而是关注运行的增长。</p>
-<h4 id="1、渐进记号"><a href="#1、渐进记号" class="headerlink" title="1、渐进记号"></a>1、渐进记号</h4><p>抛弃低阶项并去除常量<br>Θ：渐近紧确界<br>    等于 0&lt;=c1g(n)&lt;=f(n)&lt;=c2g(n) ==&gt;f(n) = Θ(g(n)) n&gt;n0<br>    c1 = a/4,c2 = 7a/4<br>    是O与Ω的交集<br>O渐进上界<br>    小于等于<br>    f(n) = O(g(n))<br>        0&lt;=f(n)&lt;=c<em>g(n)<br>        n0&lt;=n,c&gt;0<br>Ω渐进下界<br>    大于等于<br>    f(n) = Ω(g(n))<br>        0&lt;=c</em>g(n)&lt;=f(n)<br>        n0&lt;=n,c&gt;0<br>o 小于<br>w 大于<br>对于任意两个函数f(n)、g(n)，我们有f(n)=Θ(g(n)),当且仅当f(n)=O(g(n))且f(n)=Ω(g(n))</p>
-<h4 id="2、标准记号与常用函数"><a href="#2、标准记号与常用函数" class="headerlink" title="2、标准记号与常用函数"></a>2、标准记号与常用函数</h4><pre><code>单调性
-取整
-    𠃊x𠃎 向下取整
-    ┍x┑ 向下取整 
-模运算
-多项式
-指数
-    lim(1+x/n)^n = e^x;
-    n-&gt;∞
-对数
-阶乘
-    lg(n!) = Θ(nlgn)
-多重函数
-多重对数函数
-lg*n  增长特慢
-斐波那契数
-    与黄金分割率以及其共轭数有关，是x^2=x+1的两个根
-        ∮= (1+5^1/2)
-        ∮&apos;=(1-5^1/2)
-    Fi = (∮ - ∮&apos;)/5^1/2</code></pre><h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="1、最大子数组"><a href="#1、最大子数组" class="headerlink" title="1、最大子数组"></a>1、最大子数组</h3><p>寻找数组A的和最大的连续子数组。<br>暴力求解方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">T(n) = n^2;</span><br><span class="line">var max = -Infinity;    //存储最大子数组和</span><br><span class="line">var maxI = 0;           //存储最大子数组和的开始下标</span><br><span class="line">var maxJ = 0;           //存储最大子数组和的结束下标</span><br><span class="line"><span class="keyword">for</span>(var i =0;i&lt;arr.length;i++)&#123;</span><br><span class="line">    var sum = 0;            //存储数组总和</span><br><span class="line">    <span class="keyword">for</span>(var j = i;j&lt;arr.length;j++)&#123;</span><br><span class="line">        sum += arr[j];</span><br><span class="line">        <span class="keyword">if</span>(sum&gt;max)&#123;</span><br><span class="line">            max = sum;</span><br><span class="line">            maxI =i;</span><br><span class="line">            maxJ = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>分治法求解</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">//线性时间内求出跨越中点的最大子数组</span><br><span class="line"><span class="keyword">function</span> find_max_cross(arr,low,mid,high)&#123;</span><br><span class="line">    var left_sum=-Infinity,sum = 0,max_left;</span><br><span class="line">    <span class="keyword">for</span>(var i = mid;i&gt;=low;i--)&#123;</span><br><span class="line">        sum +=arr[i];</span><br><span class="line">        <span class="keyword">if</span>(sum&gt;left_sum)&#123;</span><br><span class="line">            left_sum = sum;</span><br><span class="line">            max_left = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    var right_sum=-Infinity,sum = 0,max_right;</span><br><span class="line">    <span class="keyword">for</span>(var j=mid+1;j&lt;=high;j++)&#123;</span><br><span class="line">        sum +=arr[j];</span><br><span class="line">        <span class="keyword">if</span>(sum&gt;right_sum)&#123;</span><br><span class="line">            right_sum = sum;</span><br><span class="line">            max_right = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> &#123;max_left,max_right,left_sum:(left_sum+right_sum)&#125; </span><br><span class="line">&#125;</span><br><span class="line">//使用分治法分解</span><br><span class="line">var res =&#123;&#125;;     //存储结果</span><br><span class="line"><span class="keyword">function</span> find_max_subarray(arr,low,high)&#123;</span><br><span class="line">    <span class="keyword">if</span>(low==high)&#123;</span><br><span class="line">        var sum = arr[low]</span><br><span class="line">        <span class="built_in">return</span> &#123;max_left:low,max_right:high,left_sum:sum&#125;;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        var mid = Math.floor((low+high)/2);</span><br><span class="line">        var left_res = find_max_subarray(arr,low,mid)</span><br><span class="line">        var right_res = find_max_subarray(arr,mid+1,high)</span><br><span class="line">        var cross_res = find_max_cross(arr,low,mid,high)</span><br><span class="line">        var currres =&#123;&#125;; //存当前数组最大值</span><br><span class="line">        <span class="keyword">if</span>(left_res.left_sum&gt;=right_res.left_sum&amp;&amp;left_res.left_sum&gt;=cross_res.left_sum)&#123;</span><br><span class="line">            currres = left_res</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(right_res.right_sum&gt;=left_res.left_sum&amp;&amp;right_res.left_sum&gt;=cross_res.left_sum)&#123;</span><br><span class="line">            currres = right_res</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            currres = cross_res</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(JSON.stringify(res)==<span class="string">"&#123;&#125;"</span>||currres.left_sum&gt;res.left_sum)&#123; //JSON.stringify(res)==<span class="string">"&#123;&#125;"</span>判断对象是否为空</span><br><span class="line">        res = currres;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度 T(n) = Θ(nlgn)</p>
-<h3 id="2、矩阵乘法Strassen算法"><a href="#2、矩阵乘法Strassen算法" class="headerlink" title="2、矩阵乘法Strassen算法"></a>2、矩阵乘法Strassen算法</h3><p>矩阵乘法普通代码实现</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fn(a,b)&#123;</span><br><span class="line">    n = a.length;</span><br><span class="line">    <span class="built_in">let</span> c =[[]]</span><br><span class="line">    <span class="keyword">for</span>(i = 0;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(var j=0;j&lt;n;j++)&#123;</span><br><span class="line">            c[i][j] = 0;</span><br><span class="line">            <span class="keyword">for</span>(var k =0;k&lt;n;k++)&#123;</span><br><span class="line">                c[i][j]=a[i][k]+b[k][j]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>T(n) = Θ(n^3)<br>分治代码实现</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fn(a,b)&#123;</span><br><span class="line">    n = a.rows</span><br><span class="line">    <span class="built_in">let</span> c be a new n*n matrix</span><br><span class="line">    <span class="keyword">if</span>(n==1)&#123;</span><br><span class="line">        c11=a11*b11</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        a,b,c 分解为最小的4个元素</span><br><span class="line">        c11 = fn(a11,b11)+fn(a12,b21)</span><br><span class="line">        c12 = fn(a11,b12)+fn(a12,b22)</span><br><span class="line">        c21 = fn(a21,b11)+fn(a22,b21)</span><br><span class="line">        c22 = fn(a21,b12)+fn(a22,b22)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>-----Θ(1)     n=1;</code></pre><p>T(n)=|<br>        —–8T(n/2)+ Θ(n^2)   n&gt;1<br>T(n) = Θ(n^3)<br>Strassen方法实现<br>    核心思想：令递归树稍微不那么茂盛。<br>    步骤：<br>        1、将矩阵分为n/2<em>n/2的矩阵<br>        2、创建10个n/2</em>n/2的矩阵S1、S2….S10,每个矩阵保持步骤1中创建的两个子矩阵的和或者差<br>        3、用步骤1和步骤2创建的10个矩阵，递归计算7个矩阵积P1、P2.。。P7.<br>        4、通过pi矩阵的不同组合进行加减运算，计算出c11、c12、c21、c22<br>    T(n) = n^lg7</p>
-<h3 id="3、递归求解"><a href="#3、递归求解" class="headerlink" title="3、递归求解"></a>3、递归求解</h3><h4 id="代入法"><a href="#代入法" class="headerlink" title="代入法"></a>代入法</h4><pre><code>1、假设
-2、归纳法
-    T(n) = 4T(n/2)+n
-    假设为O(n^3)
-        T(n) = 4*c*(n/2)^3+n
-        T(N) = c*n^3/2+n
-        预想结果c*n^3
-        结果与实际之差，余项：c*n^3/2-n&gt;=0 符合但至少是个大概值
-    假设为O(n)
-        T(n) = 4*c*(n/2)^2+n
-        T(n) = c*n^2+n
-        预想结果c*n^2
-        结果与实际之差，余项：-n&lt;0 不符合
-    Θ(n)&lt;T(n)&lt;Θ(n^3)
-    假设为O(n^2)
-    假设T(n) = c1*k^2-c2*k;
-        T(n) = 4*(c1*(n/2)^2-c2*n/2)+n 
-            = c1*n^2-2c2*n+n 
-            =c1*n^2-(1-2c2)*n
-        预想 c1*n^2-c2*n 
-        余项 (c2-1)*n   c2&gt;=1</code></pre><h4 id="递归树法（不严谨）"><a href="#递归树法（不严谨）" class="headerlink" title="递归树法（不严谨）"></a>递归树法（不严谨）</h4><pre><code>子叶数目、 一层一层累加
-将递归式转化为一颗树，其结点表示不同层次的递归调用产生的代价。然后采用边界和技术来求解递归式</code></pre><h4 id="主方法"><a href="#主方法" class="headerlink" title="主方法"></a>主方法</h4><pre><code>T(n) = aT(n/b)+f(n) a&gt;=1,b&gt;=1 f(n)渐近正函数
-若f(n) = O(n^logb(a))则T(n) = Θ(n^logb(a))  小于  
-若f(n) = Θ(n^logb(a))则T(n) = Θ(n^logb(a)*lng)  等于
-若f(n) = Ω(n^logb(a+Σ))则T(n) = Θ(f(n))    Σ&gt;0为常数  大于
-证明主定理</code></pre><h2 id="概率分析以及随机算法"><a href="#概率分析以及随机算法" class="headerlink" title="概率分析以及随机算法"></a>概率分析以及随机算法</h2><h3 id="1、概率分析"><a href="#1、概率分析" class="headerlink" title="1、概率分析"></a>1、概率分析</h3><pre><code>概率分析是在问题分析中应用概率的理念。
-平均情况运行时间</code></pre><h3 id="2、指示器随机变量"><a href="#2、指示器随机变量" class="headerlink" title="2、指示器随机变量"></a>2、指示器随机变量</h3><p>给定一个样本空间S和S中的一个事件A，设XA=I{A}，那么E[XA]=Pr{A} //E[XA]期望 Pr{A} 概率  I{A}是否发生</p>
-<h3 id="3、随机算法"><a href="#3、随机算法" class="headerlink" title="3、随机算法"></a>3、随机算法</h3><pre><code>一个算法的行为不仅由输入决定，而且还由随机数生成器产生的数量决定
-期望运行时间：随机算法运行时间</code></pre><h3 id="4、概率分析与指示器随机变量"><a href="#4、概率分析与指示器随机变量" class="headerlink" title="4、概率分析与指示器随机变量"></a>4、概率分析与指示器随机变量</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/29/%E7%AE%97%E6%B3%95/" data-id="ckarlstbq0000mkuvb4euerek" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
