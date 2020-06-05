@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>js事件 | 深陷迷途的猫</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="事件事件就是文档或者浏览器窗口中发生一些特定的交互瞬间。 事件流事件流描述的是从页面中接收事件的顺序两类：    IE的事件流（事件冒泡）：事件开始是由最具体的元素接收，然后向上传递，知道文档        div–&gt;body–&gt;html–&gt;document    Netscape Communicator的事件流（事件捕获）：不太具体的结点应该更早接收事件，而最具体的元素应该最">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js事件">
+<meta property="og:url" content="http://yoursite.com/2020/06/05/js%E4%BA%8B%E4%BB%B6/index.html">
+<meta property="og:site_name" content="深陷迷途的猫">
+<meta property="og:description" content="事件事件就是文档或者浏览器窗口中发生一些特定的交互瞬间。 事件流事件流描述的是从页面中接收事件的顺序两类：    IE的事件流（事件冒泡）：事件开始是由最具体的元素接收，然后向上传递，知道文档        div–&gt;body–&gt;html–&gt;document    Netscape Communicator的事件流（事件捕获）：不太具体的结点应该更早接收事件，而最具体的元素应该最">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-05T03:24:44.000Z">
+<meta property="article:modified_time" content="2020-06-05T03:27:12.637Z">
+<meta property="article:author" content="sara">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="深陷迷途的猫" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">深陷迷途的猫</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">随笔</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/05/js%E4%BA%8B%E4%BB%B6/" class="article-date">
+  <time datetime="2020-06-05T03:24:44.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js事件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p>事件就是文档或者浏览器窗口中发生一些特定的交互瞬间。</p>
+<h2 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h2><p>事件流描述的是从页面中接收事件的顺序<br>两类：<br>    IE的事件流（事件冒泡）：事件开始是由最具体的元素接收，然后向上传递，知道文档<br>        div–&gt;body–&gt;html–&gt;document<br>    Netscape Communicator的事件流（事件捕获）：不太具体的结点应该更早接收事件，而最具体的元素应该最后接收事件。向下传递。<br>        document–&gt;htm–&gt;body–&gt;div<br>DOM事件流：<br>    三个阶段：<br>        事件捕获阶段<br>        处于目标阶段<br>        事件冒泡阶段</p>
+<h2 id="事件处理程序："><a href="#事件处理程序：" class="headerlink" title="事件处理程序："></a>事件处理程序：</h2><p>事件处理程序（事件侦听器）就是响应某个事件的函数。<br>指定和删除事件处理程序<br>    addEventListener()<br>    removeEventListener()<br>    接受3个参数<br>        要处理的事件名、作为事件处理程序的函数、布尔值（值为true是捕获阶段调用，反之在冒泡阶段调用）<br>IE事件处理程序<br>    有两个类似的方法<br>        attachEvent()<br>        detachEvent()<br>        接受两个参数，IE 是冒泡事件流，所以没有第三参数。事件都添加在事件冒泡阶段<br>跨浏览器的事件处理程序</p>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>在触发DOM上的某个事件时，会产生一个对象事件event。<br>DOM中的事件对象<br>    event<br>    属性：<br>        bubbles 事件是否冒泡<br>        cancelable 是否可以取消事件默认行为<br>        currentTarget 事件当前正在处理的元素  等于this对象<br>        defaultPrevented 是否阻止默认事件 比如a链接跳转，form的提交按钮<br>        detail 与事件相关的信息  只读<br>        eventPhase 调用事件处理阶段<br>        target 事件的目标<br>        trusted 为true表示浏览器生成的，否则由开发人员通过JavaScript创建的。<br>        type 被触发的事件类型<br>        view 与事件相关的抽象视图<br>    方法<br>        preventDefault() 取消默认行为 前提是在cancelable为true时才能使用<br>        stopImmediatePropagation() 取消事件进一步捕获与冒泡，同时阻止任何事件处理程序被调用。<br>        stopPropagation() 取消事件的进一步捕获与冒泡，如果bubbles为true的时候可以使用<br>IE事件对象<br>    window.event<br>    属性:<br>    cancelBubble 是否取消冒泡事件<br>    returnValue 是否可以取消事件默认行为<br>    srcElement 事件的目标<br>    type 事件类型<br>跨浏览器对象<br>    兼容浏览器  event||window.event</p>
+<h2 id="事件类型："><a href="#事件类型：" class="headerlink" title="事件类型："></a>事件类型：</h2><p>UI事件 用户与页面元素交互时触发<br>    load<br>    unload<br>    abort 停止下载过程时<br>    error<br>    select<br>    resize 窗口大小变化时<br>    scroll<br>焦点事件 元素获取或者失去焦点时<br>鼠标事件 用户通过鼠标在页面上执行操作时<br>滚轮事件 使用鼠标滚轮时<br>文本事件 在文档中输入文本时<br>键盘事件 通过键盘在页面上执行操作时<br>合成事件 当为IME时，输入字符时<br>变动事件 底层DOM结构发生变化时</p>
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><p>对于事件程序过多问题的处理，利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。<br>优点：<br>    节约内存，减少事件注册<br>    动态绑定事件，对于新增元素可以自动绑定，无需再次绑定。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=<span class="string">"myLinks"</span>&gt; </span><br><span class="line">    &lt;li id=<span class="string">"goSomewhere"</span>&gt;Go somewhere&lt;/li&gt; </span><br><span class="line">    &lt;li id=<span class="string">"doSomething"</span>&gt;Do something&lt;/li&gt; </span><br><span class="line">    &lt;li id=<span class="string">"sayHi"</span>&gt;Say hi&lt;/li&gt; </span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">var list = document.getElementById(<span class="string">"myLinks"</span>); </span><br><span class="line">EventUtil.addHandler(list, <span class="string">"click"</span>, <span class="keyword">function</span>(event)&#123; </span><br><span class="line">    event = EventUtil.getEvent(event); </span><br><span class="line">    var target = EventUtil.getTarget(event); </span><br><span class="line">    switch(target.id)&#123; </span><br><span class="line">        <span class="keyword">case</span> <span class="string">"doSomething"</span>: </span><br><span class="line">            document.title = <span class="string">"I changed the document's title"</span>; </span><br><span class="line">            <span class="built_in">break</span>; </span><br><span class="line">        <span class="keyword">case</span> <span class="string">"goSomewhere"</span>: </span><br><span class="line">            location.href = <span class="string">"http://www.wrox.com"</span>; </span><br><span class="line">            <span class="built_in">break</span>; </span><br><span class="line">        <span class="keyword">case</span> <span class="string">"sayHi"</span>: </span><br><span class="line">            alert(<span class="string">"hi"</span>); </span><br><span class="line">            <span class="built_in">break</span>; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="事件模型："><a href="#事件模型：" class="headerlink" title="事件模型："></a>事件模型：</h2><pre><code>DOM0级模型（原始事件模型）
+    在该模型中，事件不会传播。没有事件流概念。
+    可通过html绑定也可通过js绑定
+IE事件模型
+    共有两种阶段
+        事件处理阶段、事件冒泡阶段
+DOM2级模型
+    属于W3C标准模型，有三个阶段
+        事件捕获阶段、事件处理阶段、事件冒泡阶段</code></pre><h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>javascript有一个基于事件循环的并发模型，事件循环负责执行代码、收集和处理事件以及执行对列中的子任务。<br>js的同步事件放入主线程中，形成执行栈。<br>js的异步事件放入任务队列中，而异步又分为微任务与宏任务。<br>宏队列 setTimeout、setInterval、setImmediate、I/O、UI rendering<br>微任务 promise.then、process.nextTick<br>执行顺序：<br>    先执行主线程中所有事件<br>    遇到宏任务放入宏队列，遇到微任务放入微队列<br>    再进入任务队列中，执行所有微任务<br>    在执行所有宏任务<br>    重复3和4步骤</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/05/js%E4%BA%8B%E4%BB%B6/" data-id="ckb1ne7li0000mouv0awk0jex" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/05/js%E7%BB%A7%E6%89%BF/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js继承</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/05/js%E4%BA%8B%E4%BB%B6/">js事件</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/js%E7%BB%A7%E6%89%BF/">js继承</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F%E4%B8%8E%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/">算法--排序与顺序统计量</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/29/%E7%AE%97%E6%B3%95/">算法基础知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 sara<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">随笔</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
