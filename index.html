@@ -66,6 +66,134 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-typescript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/06/typescript/" class="article-date">
+  <time datetime="2020-07-06T09:44:08.000Z" itemprop="datePublished">2020-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/06/typescript/">typescript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h1><p>&emsp;&emsp;是JavaScript的一个超集，主要提供类型系统和对ES6的支持<br>&emsp;&emsp;微软开发的一款开源编程语言<br>&emsp;&emsp;更像后端JAVA、C#语言，让js可以开发大型项目</p>
+<h1 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h1><p>&emsp;&emsp;npm install -g typescript<br>&emsp;&emsp;可安装visual studio的typescript插件<br>&emsp;&emsp;cnpm install -g typescript<br>&emsp;&emsp;yarn golbal add typescript<br>&emsp;&emsp;&emsp;&emsp;yarn 安装：npm/cnpm install -g yarn </p>
+<h1 id="3、转化js-编译ts代码"><a href="#3、转化js-编译ts代码" class="headerlink" title="3、转化js 编译ts代码"></a>3、转化js 编译ts代码</h1><p>&emsp;&emsp;tsc name.ts<br>&emsp;&emsp;vscode自动编译.ts文件<br>&emsp;&emsp;&emsp;&emsp;在文件里创建tsconfig.json文件<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;cmd进入文件目录  tsc –init<br>&emsp;&emsp;&emsp;&emsp;配置json文件<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;”outDir”: “./js”,  //生成的js目录<br>&emsp;&emsp;&emsp;&emsp;配置vscode<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;点击Terminal–&gt;Run tak…–&gt;typescript–&gt;watch 路径/.json文件<br>&emsp;&emsp;&emsp;&emsp;保存ts文件自动编译成js文件。</p>
+<h1 id="4、数据类型：（类型注解）"><a href="#4、数据类型：（类型注解）" class="headerlink" title="4、数据类型：（类型注解）"></a>4、数据类型：（类型注解）</h1><p>&emsp;&emsp;原始数据类型<br>&emsp;&emsp;&emsp;&emsp;布尔值定义<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:boolean = 值;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;使用构造函数创建的布尔对象不是布尔类型 返回的是一个对象<br>&emsp;&emsp;&emsp;&emsp;数值定义<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:number = 值;<br>&emsp;&emsp;&emsp;&emsp;字符串定义<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:string = 值;<br>&emsp;&emsp;&emsp;&emsp;空值定义<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:void =undefined/null;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;function name():void{} //返回值为空<br>&emsp;&emsp;&emsp;&emsp;null/undefined<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:null=null;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:undefined;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;是所有其他类型的子类型。可以赋值给其他类型，但是void不行。<br>&emsp;&emsp;&emsp;&emsp;任意值 any<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:any=值<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;允许赋值任何类型值<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;声明未指定类型，默认任意类型（声明时未赋值）<br>&emsp;&emsp;&emsp;&emsp;类型推论<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;声明对象未明确指定类型时，且已经赋值了，会根据值推断类型。<br>&emsp;&emsp;&emsp;&emsp;联合类型<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;表示取值可以为多种类型中的一种。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:string|number=值; //用 |分割开<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;访问不确定联合类型的变量到底是什么类型的属性时，只能访问他们的共有属性<br>&emsp;&emsp;对象类型<br>&emsp;&emsp;&emsp;&emsp;接口<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;赋值时，变量形状与接口需要一致。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Interface Person ={}<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let name:Person={}<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;可选属性：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;proName?:类型 ; 分号结束<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;任意属性<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[proName:类型]:类型;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;确定属性和可选属性都是任意属性类型的子集<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;只读属性：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;readonly proName :类型;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;封装ajax</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/*$.ajax(&#123;</span><br><span class="line">    <span class="built_in">type</span>:<span class="string">""</span>,</span><br><span class="line">    url:<span class="string">""</span>,</span><br><span class="line">    data:<span class="string">""</span>,</span><br><span class="line">    datatype:<span class="string">""</span></span><br><span class="line">&#125;)*/</span><br><span class="line">interface Config&#123;</span><br><span class="line">    <span class="built_in">type</span>:string;</span><br><span class="line">    url:string;</span><br><span class="line">    data?:string;</span><br><span class="line">    datatype:string;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> ajax(config:Config)&#123;</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.open(config.type,config.url,<span class="literal">true</span>);</span><br><span class="line">    xhr.send(config.data);</span><br><span class="line">    xhr.onreadystatechange=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="keyword">if</span>(xhr.readyState==4&amp;&amp;xhr.status==200)&#123;</span><br><span class="line">            <span class="keyword">if</span>(config.datatype==<span class="string">"json)&#123;</span></span><br><span class="line"><span class="string">                console.log(JSON.parse(xhr.responseText))</span></span><br><span class="line"><span class="string">            &#125;elsse&#123;</span></span><br><span class="line"><span class="string">                console.log("</span>成功<span class="string">",xhr.responseText)</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;可索引接口 数组、对象约束（不常用）<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;数组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface name&#123;</span><br><span class="line">    [index:number]:string</span><br><span class="line">&#125;</span><br><span class="line">对象</span><br><span class="line">interface name&#123;</span><br><span class="line">    [index:string]:string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类类型接口 对类的约束 implements（实现接口）<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;接口扩展<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;接口可以继承接口</p>
+<p>&emsp;&emsp;&emsp;&emsp;数组的类型<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类型[]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr:number[]=[1,2,3,4]</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;数组泛型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr:Array&lt;number&gt;=[1,2,3,4];</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;接口表示数组<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类数组<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;不能用普通数组表示，需要用接口数组表示</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">sum</span></span>() &#123;</span><br><span class="line">    <span class="built_in">let</span> args: &#123;</span><br><span class="line">        [index: number]: number; 索引的值为数字时，值也必须为数字</span><br><span class="line">        length: number;</span><br><span class="line">        callee: Function;</span><br><span class="line">    &#125; = arguments;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类数组有自己定义的接口 IArguments, NodeList, HTMLCollection 等<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;any在数组中<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;any[]表示数组中允许出现任意值<br>&emsp;&emsp;&emsp;&emsp;元组类型：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;已知一个数量和类型的数组，各个元素的类型不必相同<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;let namespace:[类型,类型…]=[val,val…]<br>&emsp;&emsp;&emsp;&emsp;函数的类型<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;函数表达式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> sum(x: number, y: number): number &#123;</span><br><span class="line">    <span class="built_in">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line">var sum = <span class="keyword">function</span>()(x: number, y: number): number&#123;</span><br><span class="line">    <span class="built_in">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;接口表示函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface SearchFunc &#123;</span><br><span class="line">    (<span class="built_in">source</span>: string, subString: string): boolean;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> mySearch: SearchFunc;</span><br><span class="line">mySearch = <span class="keyword">function</span>(<span class="built_in">source</span>: string, subString: string) &#123;</span><br><span class="line">    <span class="built_in">return</span> source.search(subString) !== -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;可选参数<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;proName?:类型;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;默认参数<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;proName: string = ‘val’<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;剩余参数<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;…rest:类型[]表示剩余参数，可变参数<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;重载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getInfo(age:number):string;</span><br><span class="line"><span class="keyword">function</span> getInfo(name:string):string;</span><br><span class="line"><span class="keyword">function</span> getInfo(str:any):any&#123;</span><br><span class="line">    <span class="keyword">if</span>(typeof str ==<span class="string">"string"</span>)&#123;</span><br><span class="line">        <span class="built_in">return</span> `我叫<span class="variable">$&#123;str&#125;</span>`</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">return</span> `我的年龄是<span class="variable">$&#123;str&#125;</span>`</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;类型断言<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;语法：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;值 as 类型;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;类型&gt;值;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;用途：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;将一个联合类型断言为其中一个类型<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;将一个父类断言为更加具体的子类<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;将任何一个类型断言为any<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;双重断言<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;as any as 类型;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类型断言vs类型转换<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类型断言不会影响到变量的类型<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类型断言vs类型声明<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类型断言vs泛型<br>&emsp;&emsp;&emsp;&emsp;声明文件<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;新语法索引<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;declare var 全局变量声明<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;declare function 全局函数声明<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;declare class 声明全局类<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;declare enum 声明全局枚举<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;declare namespace 声明全局对象<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;export 导出<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;export namespace 导出对象<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;export default ES6默认导出<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;export = commonjs 导出模块<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;declare global扩展全局变量<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;declare module 扩展模块<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;声明语句<br>&emsp;&emsp;&emsp;&emsp;枚举：enum<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;enum name{name1=val1,name2=val2…} 值为整数类型，默认是前一个值加一<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;var key:name=name.name1;//key是val1<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;enum name{name1,name2…}<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;var key:name=name.name1;//key是0 是索引<br>&emsp;&emsp;&emsp;&emsp;never类型<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;永不存在的值<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;只能被never类型赋值<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;是其他类型的子类型<br>&emsp;&emsp;&emsp;&emsp;void:<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;表示方法没有任何返回值<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;function name():void(){}<br>&emsp;&emsp;&emsp;&emsp;类：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;js使用构造函数实现（6种继承方法）<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;原型链继承 无法传参，共有属性方法<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;借用构造函数继承 无法复用<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;组合继承<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;原型继承<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;寄生继承<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;组合寄生继承<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类里面的静态方法<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Person.run = function(){};<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;定义类 class </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">    name:string,</span><br><span class="line">    constructor(name:string)&#123; //构造函数  实例化时触发的方法</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    run():void&#123;</span><br><span class="line">        alert(<span class="string">"你好"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var p = new Person(<span class="string">"张三"</span>); //实例化类</span><br><span class="line">ts实现继承 extends super </span><br><span class="line">class Person&#123;</span><br><span class="line">    name:string,</span><br><span class="line">    constructor(name:string)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    run():string&#123;</span><br><span class="line">        <span class="built_in">return</span> `<span class="variable">$&#123;this.name&#125;</span>在运动`</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Web extends Person&#123;</span><br><span class="line">    constructor(name:string)&#123;</span><br><span class="line">    super(name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;类里的修饰符(放属性前面)<br>&emsp;&emsp;public 公用 都可访问<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;protected 保护类型  只有类以及子类里面可访问<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;private 私有属性 只有类里面可访问<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;static 静态方法<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;多态属于继承的一种表现<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;抽象类<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;是提供其他类继承的基类，不能直接实例化<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;用abstract关键字定义抽象类和抽象方法，抽象类中的方法不包含具体实现并且必须在派生类中实现<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;abstract抽象方法只能放于抽象类中<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;抽象类的子类必须实现抽象类里面的抽象方法<br>abstract class animal{<br>    abstract eat(){//子类必须继承这个方法</p>
+<pre><code>}</code></pre><p>}<br>&emsp;&emsp;&emsp;&emsp;泛型：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;可以利用泛型创建可重用的组件<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;解决类、接口、方法的复用性，以及对不特定数据类型的支持<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<T> T表示泛型，具体什么类型，调用时指定决定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getN&lt;T&gt;(value:T):T&#123;</span><br><span class="line">    <span class="built_in">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line">getN&lt;number&gt;(123);</span><br><span class="line">getN&lt;string&gt;(<span class="string">"hfg"</span>);</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;泛型类：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class name&lt;T&gt;&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;泛型接口<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;函数接口：</p>
+<pre><code class="bash">interface config{
+    &lt;T&gt;(value:T):T;
+}
+var getInfo:config=<span class="keyword">function</span>&lt;T&gt;(value:T):T{
+    <span class="built_in">return</span> value;
+}
+getInfo&lt;number&gt;(123);
+
+interface config&lt;T&gt;{
+    (value:T):T;
+}
+<span class="keyword">function</span> getInfo&lt;T&gt;(value:T):T{
+    <span class="built_in">return</span> value;
+}
+var myinfo:config&lt;number&gt;=getInfo(123);
+把类作为参数类型的泛型类
+class ArticleCate{
+    title:string|undefined;
+    desc:string|undefined;
+    status:string|undefined;
+    constructor(parm:{ //规定传入参数 ，对参数进行限制
+        title:string|undefined,
+        desc:string|undefined,
+        status?:string|undefined
+    }){
+        this.title = parm.title;
+        this.desc = parm.desc;
+        this.status = parm.status
+    }
+}
+class myArticle&lt;T&gt;{
+    add(info:T):boolean{
+        console.log(info);
+        <span class="built_in">return</span> <span class="literal">true</span>;
+    }
+}
+var myA = new ArticleCate({
+    title:<span class="string">"过年"</span>,
+    desc:<span class="string">"鼠标"</span>,
+    status:<span class="string">"123"</span>
+
+});
+var ard = new myArticle&lt;ArticleCate&gt;();
+ard.add(myA);
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;类、接口、类型、泛型综合使用
+&amp;emsp;&amp;emsp;模块以及模块化封装DB库
+<span class="built_in">export</span> {val}
+import {val} from <span class="string">"url"</span>
+命名空间
+    namespace A{
+    //命名空间 私有的 ，外部访问，需要内部<span class="built_in">export</span>暴露
+    }
+&amp;emsp;&amp;emsp;装饰器
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;特殊类型的声明，能被附加到类声明、方法、属性或参数上，可以修改类的行为
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;是一个方法，可以注入到类、方法、属性参数上来扩展类、属性、方法、参数的功能。
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;分类
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;类装饰器
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;属性装饰器
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;方法装饰器
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;参数装饰器
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;写法 
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;装饰器 不能传参
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;装饰器工厂 能传参
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/06/typescript/" data-id="ckcbacq0m0000qwuv0urn3qaa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js-严格模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/23/js-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" class="article-date">
@@ -416,7 +544,7 @@ lg*n  增长特慢
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
     </div>
   </div>
 
@@ -427,6 +555,10 @@ lg*n  增长特慢
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/07/06/typescript/">typescript</a>
+          </li>
         
           <li>
             <a href="/2020/06/23/js-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">js-严格模式</a>
@@ -442,10 +574,6 @@ lg*n  增长特慢
         
           <li>
             <a href="/2020/05/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F%E4%B8%8E%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/">算法--排序与顺序统计量</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/29/%E7%AE%97%E6%B3%95/">算法基础知识</a>
           </li>
         
       </ul>
