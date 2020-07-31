@@ -66,6 +66,114 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/31/vue/" class="article-date">
+  <time datetime="2020-07-31T07:54:23.000Z" itemprop="datePublished">2020-07-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/31/vue/">vue 一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vue简介"><a href="#Vue简介" class="headerlink" title="Vue简介"></a>Vue简介</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><pre><code>渐进式框架</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>1.npm
+    npm install vue
+2.直接引入（CDN引入）
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.11&quot;&gt;&lt;/script&gt;
+3.下载引入</code></pre><h2 id="MVVM架构"><a href="#MVVM架构" class="headerlink" title="MVVM架构"></a>MVVM架构</h2><pre><code>Model-View-ViewModel</code></pre><h1 id="Vue基础语法"><a href="#Vue基础语法" class="headerlink" title="Vue基础语法"></a>Vue基础语法</h1><h2 id="el"><a href="#el" class="headerlink" title="el"></a>el</h2><h2 id="data"><a href="#data" class="headerlink" title="data"></a>data</h2><h2 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h2><h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><pre><code>+ beforeCreate 组件创建之初，组件属性生效之前
++ create 组件实例已经完全创建，属性也绑定，真实DOM还没生成
++ beforeMount 挂载之前调用 相关的render函数首次调用
++ mounted 挂载DOM之后调用 （在这阶段之后才能访问DOM ）
++ beforeUpdate 组件数据更新之前
++ update  组件数据更新之后
++ activited keep-alive专属，组件被激活时调用
++ deactivated keep-alive 组件被销毁时调用
++ beforeDestory 组件销毁前调用
++ destoryed 组件销毁后调用</code></pre><h2 id="指定属性"><a href="#指定属性" class="headerlink" title="指定属性"></a>指定属性</h2><h3 id="mustache-胡子语法"><a href="#mustache-胡子语法" class="headerlink" title="mustache:胡子语法"></a>mustache:胡子语法</h3><pre><code>+ 双括号{{}}</code></pre><h3 id="v-once指令："><a href="#v-once指令：" class="headerlink" title="v-once指令："></a>v-once指令：</h3><pre><code>+ 后面不需跟其他表达式
++ 只渲染一次，不随数据改变而改变</code></pre><h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><pre><code>+ 相当于innerHTML</code></pre><h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><pre><code>+ 绑定文本内容</code></pre><h3 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h3><pre><code>+ 原样显示 不解析</code></pre><h3 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h3><pre><code>+ vue解析前显示，解析后消失
++ 可利用这个设置[v-cloak]{display:none}</code></pre><h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind(:)"></a>v-bind(:)</h3><pre><code>+ 属性动态绑定
++ href class src style
++ :class=&quot;{key:vale}&quot; //可放对象 函数 数组
++ :style = &quot;{属性名，属性值}&quot; //对象
++ :style = &quot;[]&quot;   //数组</code></pre><h3 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性:computed"></a>计算属性:computed</h3><pre><code>+ 计算属性，可缓存
++ 依赖其他数据属性，当属性改变时，才会重新计算
++ 不支持异步，无法监听有异步操作的数据变化
++ 响应式
++ 有get和set方法，默认get  数据改变时调用set 取值时调用get</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;getter和setter</span><br><span class="line">computed:&#123;</span><br><span class="line">    name:&#123;</span><br><span class="line">        set:function()&#123;</span><br><span class="line">            &#x2F;&#x2F;一般没有set方法，只读属性</span><br><span class="line">        &#125;,</span><br><span class="line">        get:function()&#123;</span><br><span class="line">            return val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">computed:&#123;</span><br><span class="line">    name:function()&#123;</span><br><span class="line">        return val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="事件交互-v-on-gt"><a href="#事件交互-v-on-gt" class="headerlink" title="事件交互 v-on:==&gt;@"></a>事件交互 v-on:==&gt;@</h3><pre><code>1.$event 事件对象
+2.修饰符
+    + .prevent 阻止默认事件
+    + .stop 阻止冒泡
+    + .once只触发一次
+3.@keyup[.enter]键盘事件（回车事件）</code></pre><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><h4 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h4><pre><code>复用、虚拟DOM
+    使用key 标识，解决复用问题</code></pre><h4 id="v-show-display"><a href="#v-show-display" class="headerlink" title="v-show  display"></a>v-show  display</h4><pre><code>是否显示</code></pre><h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><p>key的绑定 :key=”item” 最好绑定元素  保证一一对应<br>diff算法</p>
+<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p>表单双向绑定<br>input  v-on:input=”” 监听input输入事件<br>radio checkbox(单选与多选)多选时用数组，单选布尔值<br>select 绑定在select上（单选与多选）multiple<br>input值绑定 :value<br>v-model修饰符<br>    + .lazy 懒加载  当input失去焦点或者回车时，改变数据<br>    + .number  默认返回字符型  转化为number类型<br>    + .trim  去掉首尾空格</p>
+<h1 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h1><h2 id="组件化思想"><a href="#组件化思想" class="headerlink" title="组件化思想"></a>组件化思想</h2><h2 id="使用组件步骤"><a href="#使用组件步骤" class="headerlink" title="使用组件步骤"></a>使用组件步骤</h2><p>1.创建组件构造器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.extend(&#123;</span><br><span class="line">    template:&quot;&quot; ,&#x2F;&#x2F;组件里的内容</span><br><span class="line">    components:&#123;name:val&#125; &#x2F;&#x2F;子组件</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>2.注册组件<br>    Vue.component()<br>    //在new Vue外面 注册的全局组件<br>    //局部组件 在new Vue({components:{name:val}})<br>3.使用组件<br>    Vue实例的作用范围内使用组件</p>
+<h2 id="父组件与子组件"><a href="#父组件与子组件" class="headerlink" title="父组件与子组件"></a>父组件与子组件</h2><h3 id="组件语法糖"><a href="#组件语法糖" class="headerlink" title="组件语法糖"></a>组件语法糖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(</span><br><span class="line">    name,</span><br><span class="line">    &#123;</span><br><span class="line">        template:&quot;#x&quot;,</span><br><span class="line">        data()&#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                &#x2F;&#x2F;数据  必须是函数 并且返回对象</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">); &#x2F;&#x2F;全局</span><br><span class="line">&#123;</span><br><span class="line">    components:&#123;</span><br><span class="line">        name:&#123;</span><br><span class="line">            template:&quot;#x&quot;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125; &#x2F;&#x2F;局部</span><br><span class="line">模板创建 </span><br><span class="line">&lt;script type&#x3D;&quot;text-x-template&quot; id&#x3D;&quot;x&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">或者</span><br><span class="line">&lt;template id&#x3D;&quot;x&quot;&gt;&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据访问"><a href="#数据访问" class="headerlink" title="数据访问"></a>数据访问</h3><pre><code>组件不能直接访问实例里的数据</code></pre><h4 id="父组件传给子组件数据："><a href="#父组件传给子组件数据：" class="headerlink" title="父组件传给子组件数据："></a>父组件传给子组件数据：</h4><pre><code>1.props
+    父组件使用v-bind:(:)传递数据 :name=&quot;val&quot; 命名为驼峰时 用-连接2
+    子组件使用props接收数据 props:[&apos;name&apos;]  
+        //数组对象，可接收多个
+        //对象{name:}类型限制
+        //对象{name:{type：类型限制,default:默认值,required:布尔值}}
+2.children/refs 父组件访问子组件
+    父组件： this.$children  //返回数组
+            this.$refs //返回对象 在子组件标签里加 ref = &quot;&quot;</code></pre><h4 id="子组件向父组件传递数据"><a href="#子组件向父组件传递数据" class="headerlink" title="子组件向父组件传递数据"></a>子组件向父组件传递数据</h4><pre><code>1.emit
+    子组件：
+        $emit() //子组件来触发事件
+        fun(){
+            this.$emit(name,params)
+        }
+        父组件：
+            v-on/@name=fn  来监听子组件
+2.parent root
+    this.$parent.属性
+    this.$root</code></pre><h4 id="父组件访问子组件下的组件"><a href="#父组件访问子组件下的组件" class="headerlink" title="父组件访问子组件下的组件"></a>父组件访问子组件下的组件</h4><pre><code>this.$bus.$emit(&quot;name&quot;)  //子组件里注册
+this.$bus.$on(&apos;name&apos;,()=&gt;{}) //父组件里调用
+Vue.prototype.$bus = new Vue()  //在Vue实例原型上绑定</code></pre><h2 id="插槽slot"><a href="#插槽slot" class="headerlink" title="插槽slot"></a>插槽slot</h2><pre><code>组件的插槽也是为了让我们封装的组件更加具有扩展性。
+让使用者可以决定组件内部的一些内容到底展示什么</code></pre><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><pre><code>    组件里定义 &lt;slot name=&quot;n&quot;&gt; 放默认标签&lt;/slot&gt;  //name联系起来 一个组件可使用多个插槽，一个插槽时可不需要name
+    使用组件时：里面放不同标签 替换插槽 &lt;cpn slot = &quot;n&quot;&gt;&lt;/cpn&gt;
+编译作用域</code></pre><h3 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h3><pre><code>父组件替换插槽的标签，内容由子组件决定
+父组件使用子组件的插槽数据
+    v-slot=&quot;slot&quot;  slot.data//父组件拿到子组件插槽数据
+    :data=&quot;pLanguages&quot; //子组件传递插槽数据
+    &lt;cpn&gt;
+        &lt;template v-slot=&quot;slot&quot;&gt;
+            &lt;span &gt;{{slot.data.join("-")}}-&lt;/span&gt;
+        &lt;/template&gt;
+    &lt;/cpn&gt;
+    &lt;template id=&quot;cpn&quot;&gt;
+        &lt;slot :data=&quot;pLanguages&quot;&gt;
+        &lt;/slot&gt;
+    &lt;/template&gt;</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/31/vue/" data-id="ckd9z988d0000bguv4mgd7lum" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-typescript" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/06/typescript/" class="article-date">
@@ -495,6 +603,10 @@ lg*n  增长特慢
       <ul>
         
           <li>
+            <a href="/2020/07/31/vue/">vue 一</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/06/typescript/">typescript</a>
           </li>
         
@@ -508,10 +620,6 @@ lg*n  增长特慢
         
           <li>
             <a href="/2020/06/05/js%E7%BB%A7%E6%89%BF/">js继承</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F%E4%B8%8E%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/">算法--排序与顺序统计量</a>
           </li>
         
       </ul>
